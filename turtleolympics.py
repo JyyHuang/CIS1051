@@ -1,0 +1,22 @@
+import turtle
+
+def turtleolympic():
+    t = turtle.Turtle()
+    t.circle(60)
+    t.up()
+    t.goto(140, 0)
+    t.down()
+    t.circle(60)
+    t.up()
+    t.goto(-140, 0)
+    t.down()
+    t.circle(60)
+    t.up()
+    t.goto(-70, -75)
+    t.down()
+    t.circle(60)
+    t.up()
+    t.goto(70, -75)
+    t.down()
+    t.circle(60)
+turtleolympic()

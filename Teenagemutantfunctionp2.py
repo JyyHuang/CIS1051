@@ -64,14 +64,42 @@ def drawNgonSpiral(myTurtle, numSides, sideLength, numShapes):
     for i in range(numShapes):
         drawNgon(myTurtle, numSides, sideLength)
         myTurtle.right(8)
+        if i > 50:
+            sideLength = 150
     turtle.done()
 
 
-t = turtle.Turtle()
-t.speed(10)
+# Bonus 1 Hourglass
+def hourglass():
+    print("|\"\"\"\"\"\"\"\"\"\"|")
+    colon = "::"
+    for i in range(4,0,-1):
+        for space in range(4-i):
+            print(" ", end="")
+        print(" \\",colon*i,"/",sep="",end="")
+        print()
+    print("     ||")
+    for i in range(0,4,1):
+        for space in range(4-i):
+            print(" ", end="")
+        print("/",colon*(i+1),"\\",sep="",end="")
+        print()
+    print("|\"\"\"\"\"\"\"\"\"\"|")
+
+#Slash Figure
+def slashfigure(n):
+    exclamation = "!!"
+    for i in range(n-1, -1, -1):
+        print(exclamation + exclamation*2*i)
+
+
+#t = turtle.Turtle()
+#t.speed(0)
 #drawSquare(t, 50)
 #drawRow(t, 5, 50)
 #drawGrid(t, 5, 50)
 #drawSquareStairs(t, 5, 50)
 #drawNgon(t, 6, 100)
-drawNgonSpiral(t, 6, 100, 40)
+#drawNgonSpiral(t, 6, 100, 100)
+#hourglass()
+#slashfigure(4)

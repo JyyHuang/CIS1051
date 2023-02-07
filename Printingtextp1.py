@@ -5,6 +5,8 @@ def bottlesofbeer(beers):
         print("Take one down, pass it around,", beers-1,"bottles of beer on the wall") # prints -1 bottles
         print()
         beers -= 1 # decreases bottles by 1 every iteration
+
+
 bottles = int(input("How many bottles of beer? "))
 if bottles > 99:
     print("Too many bottles of beers on the wall")
@@ -19,6 +21,8 @@ def multiplicationtable(size):
         for col in range(1, size+1): # 1-5
             print(row*col, end="\t")
     print()
+
+
 n = int(input("Size of table? "))
 multiplicationtable(n)
 
@@ -28,5 +32,7 @@ def summation(n):
     for i in range(1, n+1):
         sum += i**2
     return sum
+
+
 n = int(input("Int: "))
 print(summation(n))

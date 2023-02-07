@@ -1,5 +1,6 @@
 # Stairs
 import turtle
+import random
     # DrawSquare
         # myTurtle is the turtle doing the drawing
         # size is the length of each of the sides of the square.
@@ -64,8 +65,6 @@ def drawNgonSpiral(myTurtle, numSides, sideLength, numShapes):
     for i in range(numShapes):
         drawNgon(myTurtle, numSides, sideLength)
         myTurtle.right(8)
-        if i > 50:
-            sideLength = 150
     turtle.done()
 
 
@@ -88,18 +87,35 @@ def hourglass():
 
 #Slash Figure
 def slashfigure(n):
-    exclamation = "!!"
-    for i in range(n-1, -1, -1):
-        print(exclamation + exclamation*2*i)
+    exclamation = "!"
+    backslash = "\\"
+    slash = "/"
+    step = (n*4)-2
+    counter = 0
+    for i in range(0,n):
+        print(backslash*counter, exclamation*step, slash*counter, sep="")
+        step = step - 4
+        counter = counter + 2
+
+# Super Duper Spiral
+def superduperspiral(myTurtle, numSides, sideLength, numShapes):
+    for i in range(numShapes):
+        drawNgon(myTurtle, numSides, sideLength)
+        myTurtle.right(8)
+        myTurtle.pencolor()
+    turtle.done()
 
 
-#t = turtle.Turtle()
-#t.speed(0)
+t = turtle.Turtle()
+t.speed(0)
+turtle.colormode(255)
+turtle.bgcolor("black")
 #drawSquare(t, 50)
 #drawRow(t, 5, 50)
 #drawGrid(t, 5, 50)
 #drawSquareStairs(t, 5, 50)
 #drawNgon(t, 6, 100)
-#drawNgonSpiral(t, 6, 100, 100)
+#drawNgonSpiral(t, 6, 100, 50)
 #hourglass()
-#slashfigure(4)
+#slashfigure(6)
+superduperspiral(t, 6, 100, 100)

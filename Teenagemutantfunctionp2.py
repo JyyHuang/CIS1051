@@ -99,10 +99,11 @@ def slashfigure(n):
 
 # Super Duper Spiral
 def superduperspiral(myTurtle, numSides, sideLength, numShapes):
+    color = ["red", "green", "blue"]
     for i in range(numShapes):
         drawNgon(myTurtle, numSides, sideLength)
         myTurtle.right(8)
-        myTurtle.pencolor()
+        myTurtle.color(color[i%3])
     turtle.done()
 
 
@@ -118,4 +119,4 @@ turtle.bgcolor("black")
 #drawNgonSpiral(t, 6, 100, 50)
 #hourglass()
 #slashfigure(6)
-superduperspiral(t, 6, 100, 100)
+superduperspiral(t, 6, 100, 50)

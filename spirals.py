@@ -20,14 +20,6 @@ def drawNgonSpiral(myTurtle, numSides, sideLength, numShapes):
         myTurtle.right(8)
     turtle.done()
 
-# Super Duper Spiral
-def superduperspiral(myTurtle, numSides, sideLength, numShapes):
-    color = ["red", "green", "blue"]
-    for i in range(numShapes):
-        drawNgon(myTurtle, numSides, sideLength)
-        myTurtle.right(8)
-        myTurtle.color(color[i%3])
-    turtle.done()
 
 t = turtle.Turtle()
 t.speed(0)
@@ -35,4 +27,3 @@ turtle.colormode(255)
 #turtle.bgcolor("black")
 #drawNgon(t, 6, 100)
 #drawNgonSpiral(t, 6, 100, 50)
-#superduperspiral(t, 6, 100, 50)

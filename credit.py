@@ -41,7 +41,7 @@ def luhn(num):
         sumeven = sumeven + split
 
     for i in range(0, numlength, 2):            # iterates through digits not multiplied by 2
-        odd.append((number % (10 * 10**i)) // 10**i)
+        odd.append((num % (10 * 10**i)) // 10**i)
 
     for digits in odd:              # adds even and odd digits
         sumodd = sumodd + digits
@@ -55,11 +55,11 @@ if luhn(number) != 0:
 if luhn(number) == 0:
     firstdigit = int(tempnum[0])
     seconddigit = int(tempnum[1])
-    if firstdigit == 4 and numlength == 13 or numlength == 16:          # VISA
+    if firstdigit == 4 and (numlength == 13 or numlength == 16):          # VISA
         print("VISA")
     elif firstdigit == 3 and seconddigit == 4 or seconddigit == 7 and numlength == 15:          # AMEX
         print("American Express")
-    elif firstdigit == 5 and seconddigit > 0 and seconddigit < 6 and numlength == 16:           # MasterCard
+    elif firstdigit == 5 and 0 < seconddigit < 6 and numlength == 16:           # MasterCard
         print("MASTERCARD")
     else:
         print("INVALID")

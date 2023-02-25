@@ -35,14 +35,13 @@ def threearmstrong(int):
 #print(threearmstrong(370))
 
 def riddler():
-    arr = []
-    for i in range(1000, 10000):
-        arr.append(i)
-    for i in arr:
-        if i % 10 != (i % 100 // 10) != (i % 1000 // 100) != (i % 10000 // 1000):
-            if (i % 10000 // 1000) * 3 == (i % 100 // 10):
-                if i % 2 != 0:
-                    if (i % 10) + (i % 100 // 10) + (i % 1000 // 100) + (i % 10000 // 1000) == 27:
-                        return i
-
+    for number in range(1001,10000,2):
+        thou = number // 1000
+        hund = number // 100  % 10
+        tens = number // 10 % 10 
+        ones = number % 10
+        if thou != hund and thou != tens and thou != ones and hund != tens and hund != ones and tens != ones:
+            if 3 * tens == thou:
+                if thou + hund +tens + ones == 27:
+                    return number
 print(riddler())

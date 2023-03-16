@@ -1,67 +1,65 @@
+wdict = {
+    "w" : ["w","v"]
+}
+
+voweldict = {
+    "a" : "ah",
+    "e" : "eh",
+    "i" : "ee",
+    "o" : "oh",
+    "u" : "oo"
+}
+
+consonantdict = {
+    "p" : "p",
+    "k" : "k",
+    "h" : "h",
+    "l" : "l",
+    "m" : "m",
+    "n" : "n",
+    " " : " ",
+    "'" : "'"
+}
+
+groupvoweldict = {
+    "ai" : "eye",
+    "ae" : "eye",
+    "ao" : "ow",
+    "au" : "ow",
+    "ei" : "ay",
+    "eu" : "eh-oo",
+    "iu" : "ew",
+    "oi" : "oyo",
+    "ou" : "ow",
+    "ui" : "ooey"
+}
+
+
 def main():
     string = check_input()
-
-    wdict = {
-        "w" : ["w","v"]
-    }
-
-    voweldict = {
-        "a" : "ah",
-        "e" : "eh",
-        "i" : "ee",
-        "o" : "oh",
-        "u" : "oo"
-    }
-
-    consonantdict = {
-        "p" : "p",
-        "k" : "k",
-        "h" : "h",
-        "l" : "l",
-        "m" : "m",
-        "n" : "n",
-        " " : " ",
-        "'" : "'"
-    }
-
-    groupvoweldict = {
-        "ai" : "eye",
-        "ae" : "eye",
-        "ao" : "ow",
-        "au" : "ow",
-        "ei" : "ay",
-        "eu" : "eh-oo",
-        "iu" : "ew",
-        "oi" : "oyo",
-        "ou" : "ow",
-        "ui" : "ooey"
-    }
-
-    groupvalue = ""
-
+    
     for index, char in enumerate(string):
+
+        next_char = string[min((index + 1, len(string)-1))]
+
         if char in consonantdict:
             print(consonantdict[char], end="")
 
-        #elif char in groupvoweldict:    #buggy
-        
-
-
-        elif char in voweldict:
-            if index != len(string) - 1:
-                print(voweldict[char] + "-",end="")
-            else:
-                print(voweldict[char], end="")
-
         elif char in wdict:
-            if char == "w" and string[index - 1] == "i" or string[index - 1] == "e":   #buggy
+            if char == "w" and string[index - 1] == "i" or string[index - 1] == "e":
                 print(wdict[char][1], end="")
             else:
                 print(wdict[char][0], end="")
 
-    
-    
+        elif char in voweldict:
+            if char + next_char in groupvoweldict:
+                print(groupvoweldict[char + next_char] + "-", end="")
+                char = 0
 
+            elif index != len(string) - 1:
+                print(voweldict[char] + "-", end="")
+            else:
+                print(voweldict[char], end="")
 
 
 

@@ -85,7 +85,9 @@ def pronounce(string):
             result += consonantdict[char]
 
         elif char in wdict:
-            if char == "w" and string[index - 1] == "i" or string[index - 1] == "e":
+            if string[0] == "w":
+                result += wdict[char][0]
+            elif char == "w" and string[index - 1] == "i" or string[index - 1] == "e":
                 result += wdict[char][1]
             else:
                 result += wdict[char][0]

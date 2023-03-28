@@ -32,7 +32,7 @@ def threearmstrong(int):
         return True
     else:
         return False
-#print(threearmstrong(370))
+print(threearmstrong(370))
 
 def riddler():
     for number in range(1001,10000,2):

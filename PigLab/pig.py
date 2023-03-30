@@ -61,27 +61,56 @@ def holdAt20orGoal(score, limit=20):
     print(f"New Score: {score}")
     return score
 
+
 def holdat20orGoalGame():
     score = 0
     turn_total = 0
+    turns = 0
     while turn_total + score <= 100:
         roll = random.randint(1, 6)
-        print(f"Roll: {roll}")
+        #print(f"Roll: {roll}")
         if roll == 1:
             turn_total = 0
-            print(f"Turn total: {turn_total}")
-            print(f"New Score: {score}")
+            #print(f"Turn total: {turn_total}")
+            #print(f"New Score: {score}")
+            turns += 1
         else:
             turn_total += roll
             if turn_total >= 20:
                 score += turn_total
-                print(f"Turn total: {turn_total}")
-                print(f"New Score: {score}")
+                #print(f"Turn total: {turn_total}")
+                #print(f"New Score: {score}")
                 turn_total = 0
-    return score
+                turns += 1
+            elif turn_total + score >= 100:
+                score += turn_total
+                #print(f"Turn total: {turn_total}")
+                #print(f"New Score: {score}")
+                turns += 1
+    return turns
+
+
+def averageturns(games):
+    arr = []
+    for i in range(games):
+        x = holdat20orGoalGame()
+        arr.append(x)
+    average = sum(arr) / games
+    print(f"Average turns: {average}")
+    return average
+
+
+def twoPlayerPig():
+    player1 = True
+    player2 = False
+    p1score = 0
+    p2score = 0
+    turn_total = 0
 
 #holdAt20Outcomes(10000)
 #turn()
 #holdAtXOutcomes(10000, 100)
 #holdAt20orGoal(90)
-holdat20orGoalGame()
+#holdat20orGoalGame()
+#averageturns(10000)
+twoPlayerPig()

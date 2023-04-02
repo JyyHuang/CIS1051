@@ -164,6 +164,10 @@ def pig():
                 p1score += turn_total
                 turn_total = 0
                 turn = 2
+                if p1score >= 100 or p2score >= 100:
+                    print(f"Player 1 score: {p1score}")
+                    print(f"Player 2 score: {p2score}")
+                    break
                 print(f"It is player {turn}'s turn.")
                 player1 = False
                 player2 = True
@@ -174,6 +178,10 @@ def pig():
                 turn = 1
                 if x != 0:
                     p2score = x
+                if p1score >= 100 or p2score >= 100:
+                    print(f"Player 1 score: {p1score}")
+                    print(f"Player 2 score: {p2score}")
+                    break
                 print(f"It is player {turn}'s turn.")
                 player1 = True
                 player2 = False
@@ -187,6 +195,10 @@ def pig():
                 turn = 2
                 if x != 0:
                     p1score = x
+                if p1score >= 100 or p2score >= 100:
+                    print(f"Player 1 score: {p1score}")
+                    print(f"Player 2 score: {p2score}")
+                    break
                 print(f"It is player {turn}'s turn.")
                 player1 = False
                 player2 = True
@@ -210,18 +222,18 @@ def pig():
                 p2score += turn_total
                 turn_total = 0
                 turn = 1
+                if p1score >= 100 or p2score >= 100:
+                    print(f"Player 1 score: {p1score}")
+                    print(f"Player 2 score: {p2score}")
+                    break
                 print(f"It is player {turn}'s turn.")
                 player1 = True
                 player2 = False
-        if p1score >= 100 or p2score >= 100:
-            print(f"Player 1 score: {p1score}")
-            print(f"Player 2 score: {p2score}")
-            break
         
 
 
 
-
+#turn()
 #holdAt20Outcomes(10000)
 #turn()
 #holdAtXOutcomes(10000, 100)
@@ -229,4 +241,4 @@ def pig():
 #holdat20orGoalGame()
 #averageturns(10000)
 #twoPlayerPig()
-pig()
+#pig()
